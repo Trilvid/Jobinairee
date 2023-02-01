@@ -1,0 +1,70 @@
+<!-- <%- include('partials/header'); -%> -->
+<form>
+
+    <h1>sign up as </h1>
+    <label for="fullname">fullname: </label>
+    <input type="text" name="fullname"  required>
+    <div class="fullname error"></div>
+    <br>
+    <label for="email">email: </label>
+    <input type="text" name="email"  required>
+    <div class="email error"></div>
+    <br>
+    <label for="password">password: </label>
+    <input type="password" name="password"  required>
+    <div class="password error"></div>
+
+    <button><a href="/looking for a job"></a>looking for a job</button>
+    <button> <a href="/looking for employee"></a> looking for employee</button>
+</form>
+
+<script>
+    const form = document.querySelector('form');
+    const fullnameError = document.querySelector('.fullname.error');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // reset error
+
+        fullnameError.textContent = "";
+        emailError.textContent = "";
+        passwordError.textContent = "";
+        
+// get the values
+    const fullname = form.fullname.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    // try {
+
+    //     const resx = fetch(('/api/v1/users/signup'), {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'APPLICATION/JSON' },
+    //         body: JSON.stringify({ fullname, email, password })
+    //     });
+        
+    //     const data = await resx.json();
+    //     console.log(data);
+
+    //     if (data.errors) {
+    //         fullnameError.textContent = data.errors.fullname;
+    //         emailError.textContent = data.errors.email;
+    //         passwordError.textContent = data.errors.password;
+    //     }
+    //     if (data.user) {
+    //         location.assign('/')
+    //     }
+    // }
+    //  catch (err) {
+    //     console.log(err);
+    // }
+
+    });
+
+
+</script>
+
+<!-- <%- include('partials/footer'); -%> -->
